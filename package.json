@@ -1,0 +1,33 @@
+{
+  "name": "assemblyscript-demo",
+  "version": "1.0.0",
+  "description": "just an assemblyscript / wasm demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests",
+    "asbuild:debug": "asc assembly/index.ts --target debug",
+    "asbuild:release": "asc assembly/index.ts --target release",
+    "asbuild": "npm run asbuild:debug && npm run asbuild:release",
+    "start": "npx serve ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marwanism/AssemblyScript-demo.git"
+  },
+  "author": "Marwan Sabry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marwanism/AssemblyScript-demo/issues"
+  },
+  "homepage": "https://github.com/marwanism/AssemblyScript-demo#readme",
+  "devDependencies": {
+    "assemblyscript": "^0.25.0"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./build/release.js",
+      "types": "./build/release.d.ts"
+    }
+  }
+}
